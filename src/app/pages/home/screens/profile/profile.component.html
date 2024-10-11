@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="ion-padding ion-text-center">
+    Horas trabajadas: {{sumarHoras() | number:'1.0-2'}}
+  </div>
+  <ion-list>
+    
+    <ion-item>
+      <ion-select 
+        [(ngModel)]="numberOfMonth"
+        (ngModelChange)="onChangeDate($event)"
+        justify="space-between"
+        interface="popover"
+        label="Selecciona el Mes">
+        <ion-select-option [value]="0">Enero</ion-select-option>
+        <ion-select-option [value]="1">Febrero</ion-select-option>
+        <ion-select-option [value]="2">Marzo</ion-select-option>
+        <ion-select-option [value]="3">Abril</ion-select-option>
+        <ion-select-option [value]="4">Mayo</ion-select-option>
+        <ion-select-option [value]="5">Junio</ion-select-option>
+        <ion-select-option [value]="6">Julio</ion-select-option>
+        <ion-select-option [value]="7">Agosto</ion-select-option>
+        <ion-select-option [value]="8">Septiembre</ion-select-option>
+        <ion-select-option [value]="9">Octubre</ion-select-option>
+        <ion-select-option [value]="10">Noviembre</ion-select-option>
+        <ion-select-option [value]="11">Diciembre</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngFor="let item of workSchedules">
+      <ion-label>{{ item.workDate | date:'shortDate' }} </ion-label>
+      <ion-label>Inicio: {{ item.checkInTime | date:'shortTime' }} </ion-label>
+      <ion-label *ngIf="item.checkOutTime">Fin: {{ item.checkOutTime | date:'shortTime'}} </ion-label>
+      <ion-label *ngIf="!item.checkOutTime">Fin: Por Finalizar </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

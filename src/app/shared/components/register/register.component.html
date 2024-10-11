@@ -1,0 +1,43 @@
+<app-header 
+  title="Registrarse"
+  [isModal]="true"
+/>
+
+<ion-content class="ion-padding">
+  <form (submit)="register()" [formGroup]="form">
+
+    <custom-input 
+      [control]="form.controls.fullName"
+      type="text"
+      label="Nombre Completo"
+      autocomplete="off"
+    />
+
+    <custom-input 
+      [control]="form.controls.email"
+      type="text"
+      label="Correo Electronico"
+      autocomplete="off"
+    />
+
+    <custom-input 
+      [control]="form.controls.username"
+      type="text"
+      label="Usuario"
+      autocomplete="off"
+    />
+
+    <custom-input 
+      [control]="form.controls.password"
+      type="password"
+      label="Contraseña"
+      autocomplete="off"
+    />
+
+    <ion-button mode="ios" type="submit" expand="block" [disabled]="form.invalid">
+      Registrarse
+      <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+    </ion-button>
+
+  </form>
+</ion-content>

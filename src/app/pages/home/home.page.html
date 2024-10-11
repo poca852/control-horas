@@ -1,0 +1,21 @@
+<app-header 
+  title="Home"
+  [isLogout]="true"
+/>
+
+<ion-content>
+ 
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="profile" href="/home/profile">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Perfil
+      </ion-tab-button>
+      <ion-tab-button tab="mainReport" href="/home/mainReport">
+        <ion-icon name="scan-circle-outline"></ion-icon>
+        Reportar
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
